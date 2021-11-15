@@ -23,11 +23,11 @@ class User extends CI_Controller
         $this->db->where('role_id', 1);
         $data['anggota'] = $this->db->get('user')->result_array();
 
-        $this->load->view('admin/header', $data);
-        $this->load->view('admin/sidebar', $data);
-        $this->load->view('admin/topbar', $data);
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
         $this->load->view('user/anggota', $data);
-        $this->load->view('admin/footer');
+        $this->load->view('templates/footer');
     }
 
     public function ubahProfil()
@@ -40,11 +40,11 @@ class User extends CI_Controller
         ]);
             
             if ($this->form_validation->run() == false) {
-                $this->load->view('admin/header', $data);
-                $this->load->view('admin/sidebar', $data);
-                $this->load->view('admin/topbar', $data);
+                $this->load->view('templates/header', $data);
+                $this->load->view('templates/sidebar', $data);
+                $this->load->view('templates/topbar', $data);
                 $this->load->view('user/ubah-profile', $data);
-                $this->load->view('admin/footer');
+                $this->load->view('templates/footer');
             } else {
                 $nama = $this->input->post('nama', true);
                 $email = $this->input->post('email', true);
