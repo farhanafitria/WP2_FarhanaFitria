@@ -30,14 +30,10 @@
 </thead>
 <tbody>
 
-
 <?php
 $a = 1;
 foreach ($buku as $b) { ?> 
 <tr>
- 
-
-
 <th scope="row"><?= $a++; ?></th>
 <td><?= $b['judul_buku']; ?></td>
 <td><?= $b['pengarang']; ?></td>
@@ -48,27 +44,13 @@ foreach ($buku as $b) { ?>
 <td><?= $b['dipinjam']; ?></td>
 <td><?= $b['dibooking']; ?></td>
 <td> 
-
-
-
-
-type="image/svg+xml">
- 
 <picture>
-<source srcset=""
-
-
-<img src="<?= 
-base_url('assets/img/upload/') . $b['image'];?>" class="img-fluid img-thumbnail" alt="..."> 
-
-
-<td>
+<source srcset=""type="image/svg+xml">
  
+<img src="<?= base_url('assets/img/upload/') . $b['image'];?>" class="img-fluid img-thumbnail" alt="..."> 
 </picture></td>
-
-
-<a href="<?= 
-base_url('buku/ubahBuku/').$b['id'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
+<td>
+<a href="<?= base_url('buku/ubahBuku/').$b['id'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
 <a href="<?= base_url('buku/hapusbuku/').$b['id'];?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul.'
 '.$b['judul_buku'];?> ?');" class="badge badge-danger"><i class="fas
 fa-trash"></i> Hapus</a>
@@ -78,14 +60,12 @@ fa-trash"></i> Hapus</a>
 </tbody>
 </table>
 </div>
-</div> 
+</div>
 </div>
 <!-- /.container-fluid -->
 
-
 </div>
 <!-- End of Main Content -->
-
 
 <!-- Modal Tambah buku baru-->
 <div class="modal fade" id="bukuBaruModal" tabindex="-1" role="dialog" aria-labelledby="bukuBaruModalLabel" aria- hidden="true">
@@ -105,21 +85,10 @@ placeholder="Masukkan Judul Buku">
 </div>
 <div class="form-group">
 <select name="id_kategori" class="form- control form-control-user"> 
-
-
-
-
-
-
-
-$k['kategori'];?></option>
- 
 <option value="">Pilih Kategori</option>
 <?php
 foreach ($kategori as $k) { ?>
-<option value="<?= $k['id'];?>"><?=
-
-
+<option value="<?= $k['id'];?>"><?=$k['kategori'];?></option>
 <?php } ?> 
 </select>
 </div>
@@ -130,35 +99,10 @@ nama pengarang">
 <div class="form-group">
 <input type="text" class="form-control form- control-user" id="penerbit" name="penerbit" placeholder="Masukkan
 nama penerbit"> 
-
-
-
-
-
-form-control-user">
-
-
-
-
-
-?>
-
-
-$i;?></option>
- 
 </div>
 <div class="form-group">
-<select name="tahun" class="form-control
-
-
+<select name="tahun" class="form-control-form-control-user">
 <option value="">Pilih Tahun</option>
-<?php
-for ($i=date('Y'); $i > 1000 ; $i--) {
-
-
-<option value="<?= $i;?>"><?=
-
-
 <?php } ?>
 </select>
 </div>
@@ -184,3 +128,23 @@ stok">
 </div>
 <!-- End of Modal Tambah Mneu -->
 
+
+
+
+
+
+
+
+
+$k['kategori'];?></option>
+ 
+<option value="">Pilih Kategori</option>
+<?php
+foreach ($kategori as $k) { ?>
+<option value="<?= $k['id'];?>"><?=
+
+
+<?php } ?> 
+</select>
+</div>
+<div class="form-group"> 
